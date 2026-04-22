@@ -1,0 +1,107 @@
+
+
+RAG Bot Frontend — NotebookLM-Style Interface
+
+Overview
+This project provides a React-based frontend designed to work seamlessly with the FastAPI RAG Bot backend. The interface follows a three-panel NotebookLM-style layout focused on clarity, productivity, and intuitive navigation. It supports document ingestion, intelligent question answering, and structured content creation. The application also integrates real-time backend health checks and statistics polling to ensure a reliable user experience.
+
+Features
+
+* Three-panel interface consisting of Sources, Chat, and Studio sections.
+* Full integration with the FastAPI RAG backend for document upload, retrieval-augmented responses, and citations.
+* NotebookLM-inspired visual design with a dark theme and minimal, elegant UI elements.
+* Automatic backend health monitoring and periodic statistics updates.
+* Support for multi-file upload including PDFs, images, text files, and OCR-enabled workflows.
+
+Getting Started
+
+1. Install Dependencies
+   Run the following command inside the project directory:
+   npm install
+
+2. Configure the Backend URL
+   Create a file named .env in the project root and define:
+   VITE_API_URL=[http://localhost:8000](http://localhost:8000)
+
+3. Start the Development Server
+   Launch the application with:
+   npm run dev
+   Then open the local address displayed in the terminal, generally [http://localhost:5173](http://localhost:5173).
+
+Backend Requirements
+Ensure the FastAPI backend is active before using the interface. Start the backend with:
+python main.py
+
+The frontend automatically performs the following:
+
+* Checks backend health during initialization
+* Displays connectivity status
+* Refreshes system statistics every 30 seconds
+* Alerts the user if the backend becomes unreachable
+
+How to Use the Application
+
+Uploading Documents
+Open the Sources panel and select “Add sources.” Choose files to upload. The system accepts PDFs, images, text documents, and other supported formats. OCR processing is applied when required.
+
+Asking Questions
+Navigate to the Chat panel and type a question. Submit to receive retrieval-augmented responses enriched with citations from uploaded sources.
+
+Combined Upload and Query
+Begin typing a question and then select the attachment icon to upload supporting documents. The system processes the files and produces a combined answer.
+
+Project Structure
+
+src
+
+* components
+
+  * NotebookHeader.jsx        (Top navigation bar)
+  * SourcesPanel.jsx          (Document upload and management)
+  * ChatPanel.jsx             (Conversation interface)
+  * StudioPanel.jsx           (Content generation workspace)
+  * ui                        (Shared UI components)
+* lib
+
+  * api.js                    (API request handlers)
+  * utils.js                  (Utility functions)
+* App.jsx                     (Root component)
+* index.css                   (Global stylesheet)
+
+API Endpoints
+
+/api/rag          POST    Handles file uploads and question answering
+/api/health       GET     Returns backend health information
+/api/stats        GET     Provides knowledge base statistics
+
+Environment Variables
+
+VITE_API_URL      URL of the FastAPI backend
+Default: [http://localhost:8000](http://localhost:8000)
+
+Building for Production
+Use the following command to generate an optimized production build:
+npm run build
+The final output will be located in the dist directory, which can be deployed to platforms such as Netlify or Vercel.
+Ensure that the production environment includes the correct backend URL in the VITE_API_URL variable.
+
+Troubleshooting
+
+API connection failures
+Verify that the backend server is running and that the VITE_API_URL value is correct. Check your CORS configuration if requests fail to reach the server.
+
+File upload issues
+The maximum supported size is 200 MB per file. Ensure the file format is supported and check the backend logs for processing errors.
+
+Missing responses
+Ensure that documents are uploaded when necessary, inspect backend logs, and confirm that the required environment variables (such as API keys) are properly configured.
+
+Technology Stack
+React 19
+Vite
+Tailwind CSS version 4
+Radix UI components
+React Icons
+FastAPI backend (required for full functionality)
+
+
