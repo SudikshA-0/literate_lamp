@@ -76,7 +76,7 @@ export default function LandingPage() {
                 <ArrowRight size={18} />
               </Button>
             </Link>
-            <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <a href="https://github.com/SudikshA-0/literate_lamp" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <Button size="lg" variant="primary" className="gap-2 !bg-black/70 w-full sm:w-auto">
                 <Github size={18} />
                 View on GitHub
@@ -368,7 +368,7 @@ export default function LandingPage() {
               <span className="font-semibold text-sm sm:text-base">Literate-Lamp</span>
             </div>
             <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
-              <a href="https://github.com/TulikaZeth/literate-lamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors flex items-center gap-1">
+              <a href="https://github.com/SudikshA-0/literate_lamp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors flex items-center gap-1">
                 <Github size={14} className="sm:w-4 sm:h-4" />
                 GitHub
               </a>
